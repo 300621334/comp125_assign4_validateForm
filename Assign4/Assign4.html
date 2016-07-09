@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Assignment 4</title>
+    <style>
+        #main {
+            width: 960px;
+            margin: auto;
+        }
+
+        #divform {
+            background-color: beige;
+            padding: 10px 0 10px 0;
+        }
+
+        label {
+            display: inline-block;
+            width: 200px;
+            text-align: right;
+            margin: 2px 7px 2px 2px;
+        }
+        select, input{width:140px;}
+
+        #btnP {
+            padding-left: 135px;
+        }
+
+        #banner {
+            float: right;
+            height:397px;
+            width:211px;
+        }
+        #err{color:red;}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <img id="banner" src="banner.jpg" alt="Centennial college banner" />
+
+        <div id="divform">
+            <form action="mailto:johndoe@hotmail.com" novalidate>
+                <p id="err"></p>
+                <p>
+                    <label for="fname">First Name</label><input id="fname" type="text" />
+                </p>
+                <p>
+                    <label for="lname">Last  Name</label><input id="lname" type="text" />
+                </p>
+                <p>
+                    <label for="dob">DOB</label><input id="dob" class="unstyled" type="text" required placeholder="YYYYMMDD"/>
+                </p>
+
+                <p>
+                    <label for="age">Age</label><input id="age" type="text" readonly/> <!--Read Only-->
+                </p>
+                 <p>
+                    <label for="prov">Province</label>
+                
+                <select id="prov">
+	<option title="Alberta                  " value="AB">AB</option>
+	<option title="British Columbia         " value="BC">BC</option>
+	<option title="Manitoba                 " value="MB">MB</option>
+	<option title="New Brunswick            " value="NB">NB</option>
+	<option title="Newfoundland and Labrador" value="NL">NL</option>
+	<option title="Nova Scotia              " value="NS">NS</option>
+	<option title="Ontario                  " value="ON">ON</option>
+	<option title="Prince Edward Island     " value="PE">PE</option>
+	<option title="Quebec                   " value="QC">QC</option>
+	<option title="Saskatchewan             " value="SK">SK</option>
+	<option title="Northwest Territories    " value="NT">NT</option>
+	<option title="Nunavut                  " value="NU">NU</option>
+	<option title="Yukon                    " value="YT">YT</option>
+</select>	</p>
+                <p>
+                    <label for="city">City</label><input id="city" type="text" />
+                </p>
+
+                <p>
+                    <label for="pcode">Post Code</label><input id="pcode" type="text" />
+                </p>
+               
+                <h2>Login Details</h2>
+                <p>
+                    <label for="email">Email</label><input id="email" type="email" required />
+                </p>
+
+                <p>
+                    <label for="uname">Username</label><input id="uname" type="text" required />
+                </p>
+ <p>
+            <label>Password</label><input id="pass1" type="password" />
+                </p>
+                 <p>
+            <label>Confirm</label><input id="pass2" type="password" />
+                </p>
+            <p id="btnP">
+                <input id="submit" type="submit" value="submit" />
+                <input id="reset" type="reset" value="reset" />
+            </p>
+
+
+            </form>
+        </div>
+    </div>
+    <script src="assign4.js"></script>
+</body>
+</html>
