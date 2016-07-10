@@ -21,7 +21,7 @@
         }
         select, input{width:140px;}
 
-        #btnP {
+        #btnP, #err {
             padding-left: 135px;
         }
 
@@ -39,7 +39,7 @@
 
         <div id="divform">
             <form action="mailto:johndoe@hotmail.com" novalidate>
-                <p id="err"></p>
+                <h2>Biodata</h2>
                 <p>
                     <label for="fname">First Name</label><input id="fname" type="text" />
                 </p>
@@ -85,14 +85,15 @@
                 </p>
 
                 <p>
-                    <label for="uname">Username</label><input id="uname" type="text" required />
+                    <label for="uname">Username</label><input id="uname" type="text" required /> <span>At least four letters and/or digits.</span>
                 </p>
  <p>
-            <label>Password</label><input id="pass1" type="password" />
+            <label>Password</label><input id="pass1" type="password" /><span>At least one capital letter, one digit and a special character</span>
                 </p>
                  <p>
             <label>Confirm</label><input id="pass2" type="password" />
                 </p>
+                <p id="err"></p>
             <p id="btnP">
                 <input id="submit" type="submit" value="submit" />
                 <input id="reset" type="reset" value="reset" />
