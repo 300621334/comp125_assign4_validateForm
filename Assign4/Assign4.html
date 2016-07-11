@@ -3,14 +3,24 @@
 <head>
     <title>Assignment 4</title>
     <style>
+        header {
+            font-family: 'Arial Rounded MT', Helvetica, sans-serif;
+            text-align: center;
+            font-size: 50px;
+    }
+
         #main {
+            background-color: beige;
             width: 960px;
+            height:801px;
             margin: auto;
+            position: relative;
         }
 
         #divform {
             background-color: beige;
             padding: 10px 0 10px 0;
+            height:auto;
         }
 
         label {
@@ -19,36 +29,69 @@
             text-align: right;
             margin: 2px 7px 2px 2px;
         }
-        select, input{width:140px;}
+
+        select, input {
+            width: 140px;
+        }
 
         #btnP, #err {
-            padding-left: 135px;
+            /*padding-left: 330px;*/
+            text-align: center;
         }
 
         #banner {
-            float: right;
-            height:397px;
-            width:211px;
+            /*float: right;*/
+            position: absolute;
+            right: -310px;
+            height: auto;
+            width: auto;
         }
-        #err{color:red;}
-        fieldset{
-            border:5px dotted black;
-            border-radius: 25px; 
+
+        #banner2 {
+            position: absolute;
+            left: -310px;
+            height: auto;
+            width: auto;
         }
-        legend{
-            margin-left:40px;
+
+        #err {
+            color: red;
+            text-align: center;
+        }
+
+        fieldset {
+            border-color: aqua;
+            border: 3px dotted;
+            border-radius: 25px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-top: 0px;
+            padding-top: 0;
+        }
+
+        legend {
+            margin-left: 40px;
+        }
+
+        .instruct {
+            font-size: smaller;
+            color: brown;
         }
     </style>
 </head>
 <body>
     <div id="main">
         <img id="banner" src="banner.jpg" alt="Centennial college banner" />
-
+        <img id="banner2" src="banner.jpg" alt="Centennial college banner" />
+        <header>Registeration Form</header>
         <div id="divform">
             <form action="mailto:johndoe@hotmail.com" novalidate>
-                
-                <fieldset><legend><h2>Biodata</h2></legend>
-                    <p>
+
+                <fieldset>
+                    <legend>
+                        <h2>Biodata</h2>
+                    </legend>
+                    <p style="margin-top: 0px">
                         <label for="fname">First Name</label><input id="fname" type="text" autofocus />
                     </p>
                     <p>
@@ -87,33 +130,40 @@
                     </p>
 
                     <p>
-                        <label for="age">Age</label><input id="age" type="text" readonly /> <!--Read Only-->
+                        <label for="age">Age</label><input id="age" type="text" readonly />
+                        <!--Read Only-->
                     </p>
 
                 </fieldset>
 
 
-                <fieldset><legend><h2>Login Details</h2></legend>
-                    
-                    <p>
+                <fieldset>
+                    <legend>
+                        <h2>Login Details</h2>
+                    </legend>
+
+                    <p style="margin-top: 0px">
                         <label for="email">Email</label><input id="email" type="email" required />
                     </p>
 
                     <p>
-                        <label for="uname">Username</label><input id="uname" type="text" required /> <span>At least four letters and/or digits.</span>
+                        <label for="uname">Username</label><input id="uname" type="text" required />
+                        <span class="instruct">At least four letters and/or digits.</span>
                     </p>
                     <p>
-                        <label>Password</label><input id="pass1" type="password" /><span>At least one capital letter, one digit and a special character</span>
+                        <label>Password</label><input id="pass1" type="password" />
+                        <span class="instruct">At least one capital letter, one digit and a special character</span>
                     </p>
                     <p>
-                        <label>Confirm</label><input id="pass2" type="password" />
+                        <label>Confirm Password</label><input id="pass2" type="password" />
                     </p>
                 </fieldset>
-                <p id="err"></p>
-            <p id="btnP">
-                <input id="submit" type="submit" value="submit" />
-                <input id="reset" type="reset" value="reset" />
-            </p>
+                <p id="err">&nbsp;</p>
+
+                <p id="btnP">
+                    <input id="submit" type="submit" value="Register" />
+                    <input id="reset" type="reset" value="Clear Form" />
+                </p>
 
 
             </form>

@@ -18,37 +18,37 @@ function validateTextFields() {
 
     try {
         if (fName.value === "") {
-            fName.style.background = "pink  ";
+            fName.style.background = "pink";
             fName.focus();
             throw "Please fill in First Name";
         }
         if (/\d/.test(fName.value) === true)
-        { fName.style.background = "pink  "; fName.focus(); throw "First Name cannot contain numbers!"; }
+        { fName.style.background = "pink"; fName.focus(); throw "First Name cannot contain numbers!"; }
         if (/[_a-zA-Z\-]/.test(fName.value) === false)
-        { fName.style.background = "pink  "; fName.focus(); throw "Names can only contain letters or '_' or '-'"; }
+        { fName.style.background = "pink"; fName.focus(); throw "Names can only contain letters or '_' or '-'"; }
 
 
         if (lName.value === "")
-        { lName.style.background = "pink  "; lName.focus(); throw "Last Name missing!"; }
+        { lName.style.background = "pink"; lName.focus(); throw "Last Name missing!"; }
         if (/\d/.test(lName.value) === true)
-        { lName.style.background = "pink  "; lName.focus(); throw "No numbers in Last Name please!"; }
+        { lName.style.background = "pink"; lName.focus(); throw "No numbers in Last Name please!"; }
         if (/[_a-zA-Z\-]+/.test(lName.value) === false)
-        { lName.style.background = "pink  "; lName.focus(); throw "Names can only contain letters or '_' or '-'"; }
+        { lName.style.background = "pink"; lName.focus(); throw "Names can only contain letters or '_' or '-'"; }
 
         if (province.selectedIndex == -1)
-        { province.style.background = "pink  "; province.focus(); throw "Select a province please"; }
+        { province.style.background = "pink"; province.focus(); throw "Select a province please"; }
 
         if (city.value === "")
-        { city.style.background = "pink  "; city.focus(); throw "What city you are in?"; }
+        { city.style.background = "pink"; city.focus(); throw "What city you are in?"; }
         if (/\d/.test(city.value) === true)
-        { city.style.background = "pink  "; city.focus(); throw "City name cannot have numbers in it"; }
+        { city.style.background = "pink"; city.focus(); throw "City name cannot have numbers in it"; }
         if (/[a-zA-Z]/.test(city.value) === false)
-        { city.style.background = "pink  "; city.focus(); throw "Cite name can only contain alphabets"; }
+        { city.style.background = "pink"; city.focus(); throw "Cite name can only contain alphabets"; }
 
 
 
         else
-            error.innerHTML = "";
+            error.innerHTML = "&nbsp;";
         validatePostCode(); //call next validation if no error thrown
 	        
 
@@ -66,7 +66,7 @@ function validateDOB() {
         var dateBirh = document.getElementById("dob");
         dateBirh.style.background = "";
         if (/^\d{8}$/.test(dateBirh.value) == false) //^$ r necessary otherwise it looks for any 8 digits & allows even more than 8
-        { dateBirh.style.background = "pink  "; dateBirh.focus(); throw "Date of birth should be in format YYYYMMDD"; }
+        { dateBirh.style.background = "pink"; dateBirh.focus(); throw "Date of birth should be in format YYYYMMDD"; }
         //}
         //catch (msg) {
         //    error.innerHTML = msg;
@@ -87,7 +87,7 @@ function validateDOB() {
         //try
         //{ if (age != 18 || age < 18)
         if (age < 18)
-        { dateBirh.style.background = "pink  "; dateBirh.focus(); throw "Age must be at least 18 years"; }
+        { dateBirh.style.background = "pink"; dateBirh.focus(); throw "Age must be at least 18 years"; }
         //call next method
             validateEmail();
         //}
@@ -104,7 +104,7 @@ function validatePostCode() {
         postcode.style.background = "";
         //if want a dash and/or multiple spaces optional then: /^[A-Za-z]\d[A-Za-z]-? +?\d[A-Za-z]\d$/
         if (/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d *?$/.test(postcode.value) == false) //escaping hyphen not needed in [ -]? if no values on either side! works e or eout \
-        { postcode.style.background = "pink  "; postcode.focus(); throw "Type a valid Post Code."; }
+        { postcode.style.background = "pink"; postcode.focus(); throw "Type a valid Post Code."; }
         //next method call
         validateDOB(); //call next validation if no error thrown
         
@@ -120,7 +120,7 @@ function validateEmail() {
         email.style.background = "";
         //[_\w-] eout + would allow ONLY single char which could be any of three options. + aft [_\w-]+ allows more than one chars.
         if (/^[_\w-]+(\.[_\w-]+)*@[_\w-]+(\.[_\w-]+)*(\.[a-zA-Z]{2,6})$/.test(email.value) == false) //hyphen does not need escaping. To define numeric range hyphen must have int on both sides.
-        { email.style.background = "pink  "; email.focus(); throw "Please provide a valid email"; }
+        { email.style.background = "pink"; email.focus(); throw "Please provide a valid email"; }
         validateUserName();
     }
     catch (msg)
@@ -134,9 +134,9 @@ function validateUserName()
         var userName = document.getElementById("uname");
         userName.style.background = "";
         if (/.{4,}/.test(userName.value) == false)
-        { userName.style.background = "pink  "; userName.focus(); throw "Username should be at least 4 characters long"; }
+        { userName.style.background = "pink"; userName.focus(); throw "Username should be at least 4 characters long"; }
         if (/\w/.test(userName.value) == false)
-        { userName.style.background = "pink  "; userName.focus(); throw "Username can contain only letters and digits"; }
+        { userName.style.background = "pink"; userName.focus(); throw "Username can contain only letters and digits"; }
         validatePass();
     }
     catch (msg) {
@@ -150,13 +150,13 @@ function validatePass()
         var pass = document.getElementById("pass1");
         pass.style.background = "";
         if (/.{6,}/.test(pass.value) == false) //nothing else BUT all cap = /^[A-Z]+$/
-        { pass.style.background = "pink  "; pass.focus(); throw "Password must be at least 6 characters long"; }
+        { pass.style.background = "pink"; pass.focus(); throw "Password must be at least 6 characters long"; }
         if (/[A-Z]+/.test(pass.value) == false) //nothing else BUT all cap = /^[A-Z]+$/
-        { pass.style.background = "pink  "; pass.focus(); throw "Password must contain at least one capital letter"; }
+        { pass.style.background = "pink"; pass.focus(); throw "Password must contain at least one capital letter"; }
         if (/[\d]+/.test(pass.value) == false)
-        { pass.style.background = "pink  "; pass.focus(); throw "Password must contain at least one number"; }
+        { pass.style.background = "pink"; pass.focus(); throw "Password must contain at least one number"; }
         if (/[\`\~\!\@\#\$\%\^\&\*\(\)\-\_\+\=\;\:\'\"\\\|\/\?\.\>\,\<]+/.test(pass.value) == false) //omitting backslash before hyphen in this case didn't work, so had to use \
-        { pass.style.background = "pink  "; pass.focus(); throw "Password must contain at least one special character"; }
+        { pass.style.background = "pink"; pass.focus(); throw "Password must contain at least one special character"; }
         matchPass();
     }
     catch(msg)
@@ -175,7 +175,7 @@ function matchPass()
     try
     {
         if(pass1.value != pass2.value)
-        { pass1.style.background = "pink  "; pass1.focus(); pass2.style.background = "pink  "; pass2.focus(); throw "Passwords don't match!";}
+        { pass1.style.background = "pink"; pass1.focus(); pass2.style.background = "pink"; pass2.focus(); throw "Passwords don't match!";}
         window.alert("Thanks for registering with our website, your customer record was created successfully.");
     }
     catch(msg)
@@ -197,8 +197,15 @@ window.addEventListener("load", setEventListeners, false);
 function setEventListeners() {
     document.getElementById("prov").selectedIndex = -1;
     var submitBtn = document.getElementById("submit");
+    var resetBtn = document.getElementById("reset");
     submitBtn.addEventListener("click", function (event) { event.preventDefault(); }, false); //stop default action of type="submit" btn
+    resetBtn.addEventListener("click", function (event) { event.preventDefault(); }, false);
+    resetBtn.addEventListener("click", reloadLocation, false);
     submitBtn.addEventListener("click", validateTextFields, false);;
+}
+function reloadLocation()
+{
+    location.reload(true); //true is optional. Diff b/w f5 & ^f5 
 }
 
 
